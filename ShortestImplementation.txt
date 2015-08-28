@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+
+class ShortestImplementation{
+  public static void main(String[] args) {    
+    List<String> list = Arrays.asList("1234", "12345", "1");
+
+    sort(list);
+    
+  }
+  public static void sort(List<String> aList){
+    
+Comparator<String> comparator = new Comparator<String>() {
+    public int compare(String c1, String c2) {
+        return c1.length() - c2.length(); // use your logic
+    }
+};
+
+Collections.sort(aList, comparator); // use the comparator as much as u want
+System.out.println(aList);
+  }
+}

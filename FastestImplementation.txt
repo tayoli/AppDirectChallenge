@@ -1,0 +1,51 @@
+import java.io.*;
+import java.util.*;
+
+ class FastestImplementation{     
+    public static void main(String[] args) {    
+      String[] sourceArray = {"12345","1234","1","123","12",""};
+      
+      print(quickSort(sourceArray, 0, sourceArray.length-1));
+  }
+   
+   public static String[] quickSort(String[] aSourceArray, int aMin, int aMax){
+     int i=aMin,j=aMax;     
+     //Taking an element in between Min and Max to be the one to compare to
+     int middleElement = aSourceArray[(i+j)/2].length();
+     String temp;
+     //Looking for a left element that is bigger than the middleElement and right element that is smaller than the middleElement
+     while(i<=j){
+       while(aSourceArray[i].length()<middleElement){
+         i++;
+       }
+       while(aSourceArray[j].length()>middleElement){
+         j--;
+       }
+       
+       //Switching those elements places
+       if(i<=j){
+         temp=aSourceArray[i];
+         aSourceArray[i]=aSourceArray[j];
+         aSourceArray[j]=temp;
+         i++;
+        j--;
+       }
+     }
+     //after switching, doing the whole process again for subsections to the left and to the right from middleElement
+     if(aMin<j){
+       quickSort(aSourceArray,aMin,j);
+     }
+     if(i<aMax){
+       quickSort(aSourceArray,i, aMax);
+     }  
+     
+     return aSourceArray;
+   }
+   
+   public static void print(String[] aSourceArray){
+     for(int i=0; i<aSourceArray.length; i++){
+       System.out.println(aSourceArray[i]);
+     }
+   }
+ 
+ }

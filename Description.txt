@@ -1,0 +1,5 @@
+FastestImplementation - using quicksort. It won't be the quickest in all cases, but it is one of the algorithms that is optimal for this task. It is also the solution for the least memory consumption as it uses optimal number of iterations.
+
+ShortSimpleSolution - it is one of the smallest but not the most optimal by time.
+
+ShortestImplementation  - uses Collections to sort the array using customized comparator.

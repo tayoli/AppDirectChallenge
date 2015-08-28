@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+ class ShortSimpleSolution{     
+    public static void main(String[] args) {    
+      String[] sourceArray = {"12345","1234","1","123","12",""};
+      byte done = 0;
+      String temp;
+      while(done!=1){
+        done=1;
+      for(int i=0;i<sourceArray.length-1; i++){
+        if(sourceArray[i].length()>sourceArray[i+1].length()){
+          done=0;
+          temp = sourceArray[i];
+          sourceArray[i]=sourceArray[i+1];
+          sourceArray[i+1]=temp;
+        }
+      }
+      }
+for(int i=0; i<sourceArray.length; i++){
+  System.out.println(sourceArray[i]);
+}
+  }   
+   
+ }
